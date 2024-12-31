@@ -92,7 +92,7 @@ class _BonneArrivee2025ScreenState extends State<BonneArrivee2025Screen>
     Future.delayed(const Duration(milliseconds: 100), () {
       if (_currentCharIndex < _textLength) {
         setState(() {
-          _displayedText += "Bonne année 2025!"[_currentCharIndex];
+          _displayedText += "Bonne année 2025 !"[_currentCharIndex];
           _currentCharIndex++;
         });
         _animateText();
