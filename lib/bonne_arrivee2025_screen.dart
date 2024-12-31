@@ -1,6 +1,3 @@
-
-
-
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -64,7 +61,6 @@ class _BonneArrivee2025ScreenState extends State<BonneArrivee2025Screen>
         // Délai pour faire apparaître les explosions séquentiellement
         _triggerSequentialExplosions();
 
-      
         Future.delayed(const Duration(seconds: 2), () {
           if (mounted) {
             setState(() {
@@ -96,7 +92,7 @@ class _BonneArrivee2025ScreenState extends State<BonneArrivee2025Screen>
     Future.delayed(const Duration(milliseconds: 100), () {
       if (_currentCharIndex < _textLength) {
         setState(() {
-          _displayedText += "Bonne année 2025 !"[_currentCharIndex];
+          _displayedText += "Bonne année 2025!"[_currentCharIndex];
           _currentCharIndex++;
         });
         _animateText();
@@ -132,89 +128,88 @@ class _BonneArrivee2025ScreenState extends State<BonneArrivee2025Screen>
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                     Text(
-  "202",
-  style: TextStyle(
-    color: Colors.white,
-    fontSize: 80,
-    fontWeight: FontWeight.bold,
-    fontFamily: 'Cursive', 
-    letterSpacing: 2.0,   
-    shadows: [
-      Shadow(
-        offset: Offset(2.0, 2.0),
-        blurRadius: 3.0,
-        color: Colors.black.withOpacity(0.5),
-      ),
-    ],
-  ),
-),
-SizedBox(
-  width: 70,
-  height: 200,
-  child: Stack(
-    alignment: Alignment.center,
-    children: [
-      if (!_showExplosion)
-        AnimatedBuilder(
-          animation: _controller,
-          builder: (context, child) {
-            return Transform.translate(
-              offset: Offset(0, _animation4Move.value),
-              child:  Text(
-                "4",
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 80,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Cursive', 
-                  letterSpacing: 2.0,  
-                  shadows: [
-                    Shadow(
-                      offset: Offset(2.0, 2.0),
-                      blurRadius: 3.0,
-                      color: Colors.black.withOpacity(0.5),
+                    Text(
+                      "202",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 80,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Cursive',
+                        letterSpacing: 2.0,
+                        shadows: [
+                          Shadow(
+                            offset: const Offset(2.0, 2.0),
+                            blurRadius: 3.0,
+                            color: Colors.black.withOpacity(0.5),
+                          ),
+                        ],
+                      ),
                     ),
-                  ],
-                ),
-              ),
-            );
-          },
-        ),
-      if (_showExplosion)
-        const Positioned(
-          top: -50,
-          child: ExplosionEffect(),
-        ),
-      AnimatedBuilder(
-        animation: _animation5,
-        builder: (context, child) {
-          return Transform.translate(
-            offset: Offset(0, _animation5.value),
-            child:  Text(
-              "5",
-              style: TextStyle(
-                color: Colors.green,
-                fontSize: 80,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Cursive',
-                letterSpacing: 2.0, 
-                shadows: [
-                  Shadow(
-                    offset: Offset(2.0, 2.0),
-                    blurRadius: 3.0,
-                    color: Colors.black.withOpacity(0.5),
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
-    ],
-  ),
-),
-
+                    SizedBox(
+                      width: 70,
+                      height: 200,
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          if (!_showExplosion)
+                            AnimatedBuilder(
+                              animation: _controller,
+                              builder: (context, child) {
+                                return Transform.translate(
+                                  offset: Offset(0, _animation4Move.value),
+                                  child: Text(
+                                    "4",
+                                    style: TextStyle(
+                                      color: Colors.red,
+                                      fontSize: 80,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Cursive',
+                                      letterSpacing: 2.0,
+                                      shadows: [
+                                        Shadow(
+                                          offset: const Offset(2.0, 2.0),
+                                          blurRadius: 3.0,
+                                          color: Colors.black.withOpacity(0.5),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                          if (_showExplosion)
+                            const Positioned(
+                              top: -50,
+                              child: ExplosionEffect(),
+                            ),
+                          AnimatedBuilder(
+                            animation: _animation5,
+                            builder: (context, child) {
+                              return Transform.translate(
+                                offset: Offset(0, _animation5.value),
+                                child: Text(
+                                  "5",
+                                  style: TextStyle(
+                                    color: Colors.green,
+                                    fontSize: 80,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'Cursive',
+                                    letterSpacing: 2.0,
+                                    shadows: [
+                                      Shadow(
+                                        offset: const Offset(2.0, 2.0),
+                                        blurRadius: 3.0,
+                                        color: Colors.black.withOpacity(0.5),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
                 if (_showMessage)
